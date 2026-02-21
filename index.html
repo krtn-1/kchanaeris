@@ -1,244 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K'chanaeris</title>
+<title>k'chanaeris</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin:0;
-  font-family:'Quicksand', sans-serif;
-  background:linear-gradient(to bottom right,#fdf6f8,#f8bbd0);
-  color:#4a4a4a;
-  scroll-behavior:smooth;
-  cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur827.cur'), auto;
-}
-
-/* Loading Screen */
-#loader {
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:#fdf6f8;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:'Dancing Script', cursive;
-  font-size:2rem;
-  color:#c86b85;
-  z-index:9999;
-}
-
-/* Countdown */
-#countdown {
-  text-align:center;
-  padding:20px;
-  font-weight:600;
-  color:#c86b85;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #fff8fb, #ffeef5);
+  overflow-x:hidden;
 }
 
 header {
   text-align:center;
-  padding:80px 20px;
+  padding:60px 20px;
 }
 
-h1 {
-  font-family:'Dancing Script', cursive;
-  font-size:4rem;
-  color:#c86b85;
+.logo {
+  font-family:'Parisienne', cursive;
+  font-size:48px;
+  color:#d98ca7;
 }
 
-nav a {
-  margin:0 10px;
-  text-decoration:none;
-  color:#c86b85;
-  border:2px solid #c86b85;
-  padding:8px 16px;
-  border-radius:20px;
-  font-weight:600;
+.tagline {
+  font-family:'Playfair Display', serif;
+  font-size:20px;
+  color:#9c6b7d;
 }
 
-section { padding:60px 20px; text-align:center; }
+section {
+  padding:60px 10%;
+}
 
-.shop-grid {
+h2 {
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  color:#c06c84;
+}
+
+.products {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  max-width:1000px;
-  margin:auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:30px;
+  margin-top:40px;
 }
 
-.product {
-  background:#fffafc;
+.card {
+  background:white;
   border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.05);
   padding:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  position:relative;
+  text-align:center;
+  transition: all 0.6s ease;
+  opacity:0;
+  transform: translateY(30px);
 }
 
-.product img { width:100%; border-radius:15px; }
-
-.price { font-weight:bold; margin:10px 0; }
-
-.qty {
-  width:50px;
-  padding:5px;
-  border-radius:10px;
-  border:1px solid #ccc;
+.card.show {
+  opacity:1;
+  transform: translateY(0);
 }
 
-.btn {
-  background:#c86b85;
-  color:white;
+.card img {
+  width:100%;
+  border-radius:15px;
+}
+
+.price {
+  color:#d98ca7;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+button {
+  background:#f7c9d9;
   border:none;
-  padding:8px 16px;
+  padding:10px 20px;
   border-radius:20px;
   cursor:pointer;
-  margin:5px;
 }
 
-.btn:hover { background:#b85c76; }
-
-.soldout {
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:red;
-  color:white;
-  padding:5px 10px;
-  border-radius:10px;
-  font-size:12px;
-}
-
-/* Cart */
-#cart {
-  background:white;
-  padding:20px;
-  border-radius:20px;
-  max-width:500px;
-  margin:40px auto;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+button:hover {
+  background:#f3a9c4;
 }
 
 footer {
-  background:#f8bbd0;
-  color:white;
-  padding:20px;
   text-align:center;
+  padding:40px;
+  background:#fff0f5;
+  color:#b76e8b;
+}
+
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:10px;
+  border:1px solid #f3c3d3;
 }
 </style>
 </head>
 
 <body>
 
-<div id="loader">Loading K'chanaeris ✨</div>
-
 <header>
-<h1>K'chanaeris</h1>
-<p>rose quartz • kpop blind bags • 2026</p>
+<div class="logo">k'chanaeris</div>
+<div class="tagline">Rose Quartz Collection — Coming Soon</div>
 </header>
 
-<div id="countdown"></div>
+<section id="about">
+<h2>About Us</h2>
+<p style="text-align:center; max-width:700px; margin:auto;">
+k'chanaeris is a soft luxury pastel brand created with love for kpop collectors.
+We curate aesthetic merch, blind bags, and exclusive finds.
+Instant browser shop. Fast replies. Lots of freebies 💗
+</p>
+</section>
 
-<section>
-<h2>Shop</h2>
+<section id="products">
+<h2>Products</h2>
 
-<div class="shop-grid">
+<div class="products">
 
-<div class="product">
-<img src="https://i.imgur.com/s3dKc9z.png">
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=Enhypen+Blind+Bag">
+<h3>Enhypen Blind Bag</h3>
+<div class="price">$8</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=NewJeans+Blind+Bag">
 <h3>NewJeans Blind Bag</h3>
-<p class="price">$6.90</p>
-Qty: <input type="number" value="1" min="1" class="qty">
-<br>
-<button class="btn" onclick="addToCart('NewJeans Blind Bag',6.90,this)">Add to Cart</button>
+<div class="price">$8</div>
+<button>Add to Cart</button>
 </div>
 
-<div class="product">
-<img src="https://i.imgur.com/b7W5Q1x.png">
-<h3>ENHYPEN Blind Bag</h3>
-<p class="price">$6.90</p>
-Qty: <input type="number" value="1" min="1" class="qty">
-<br>
-<button class="btn" onclick="addToCart('ENHYPEN Blind Bag',6.90,this)">Add to Cart</button>
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=IVE+Photocard+Set">
+<h3>IVE Photocard Set</h3>
+<div class="price">$12</div>
+<button>Add to Cart</button>
 </div>
 
-<div class="product">
-<img src="https://i.imgur.com/Vx8SkpZ.png">
-<h3>Limited Pop Cards</h3>
-<div class="soldout">SOLD OUT</div>
-<p class="price">$4.90</p>
-Qty: <input type="number" value="1" min="1" class="qty" disabled>
-<br>
-<button class="btn" disabled>Sold Out</button>
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=Le+Sserafim+Bundle">
+<h3>Le Sserafim Bundle</h3>
+<div class="price">$15</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=Seventeen+Mystery+Pack">
+<h3>Seventeen Mystery Pack</h3>
+<div class="price">$10</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=TXT+Sticker+Set">
+<h3>TXT Sticker Set</h3>
+<div class="price">$6</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=Babymonster+Keychain">
+<h3>Babymonster Keychain</h3>
+<div class="price">$9</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300/ffeef5/d98ca7?text=Aespa+Luxe+Card">
+<h3>Aespa Luxe Card</h3>
+<div class="price">$11</div>
+<button>Add to Cart</button>
 </div>
 
 </div>
 </section>
 
-<div id="cart">
-<h2>Your Cart</h2>
-<ul id="cart-items"></ul>
-<p><strong>Total: $<span id="total">0.00</span></strong></p>
-<button class="btn" onclick="checkout()">Checkout via WhatsApp</button>
-</div>
+<section id="payment">
+<h2>Payment</h2>
+<p>PayLah / PayNow: 87596409</p>
+<p>Upload payment screenshot:</p>
+<input type="file">
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Fastest reply via:</p>
+<p>
+WhatsApp: <a href="https://wa.me/6587596409">87596409</a><br>
+Instagram: <a href="https://www.instagram.com/k_chanaeris.1102/?utm_source=ig_web_button_share_sheet">k_chanaeris.1102</a><br>
+Xiaohongshu: <a href="https://xhslink.com/m/4tW8LoRKEYX">Click Here</a><br>
+Email: tansychengkyra@gmail.com
+</p>
+</section>
 
 <footer>
-© 2026 K'chanaeris • built with love 💖
+© 2026 k'chanaeris. All rights reserved.
 </footer>
 
 <script>
-// Loader
-window.onload = function(){
-  document.getElementById("loader").style.display="none";
-}
-
-// Countdown to preorder date
-var countDownDate = new Date("Mar 30, 2026 00:00:00").getTime();
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("countdown").innerHTML = 
-  "Preorder closes in: " + days + " days 💗";
-}, 1000);
-
-// Cart system
-let cart = [];
-function addToCart(name,price,btn){
-  let qty = btn.parentElement.querySelector(".qty").value;
-  cart.push({name,price,qty});
-  updateCart();
-}
-
-function updateCart(){
-  let list = document.getElementById("cart-items");
-  let total = 0;
-  list.innerHTML="";
-  cart.forEach((item,index)=>{
-    total += item.price * item.qty;
-    list.innerHTML += `<li>${item.name} x${item.qty} - $${(item.price*item.qty).toFixed(2)}
-    <button onclick="removeItem(${index})">❌</button></li>`;
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      card.classList.add('show');
+    }
   });
-  document.getElementById("total").innerText=total.toFixed(2);
-}
+});
 
-function removeItem(index){
-  cart.splice(index,1);
-  updateCart();
-}
-
-function checkout(){
-  let message="Hi! I want to order:\n";
-  cart.forEach(item=>{
-    message+=`${item.name} x${item.qty}\n`;
-  });
-  message+=`Total: $${document.getElementById("total").innerText}`;
-  window.open(`https://wa.me/6587596409?text=${encodeURIComponent(message)}`);
-}
+document.addEventListener("mousemove", function(e){
+  const sparkle = document.createElement("div");
+  sparkle.style.position="fixed";
+  sparkle.style.left=e.pageX+"px";
+  sparkle.style.top=e.pageY+"px";
+  sparkle.style.width="6px";
+  sparkle.style.height="6px";
+  sparkle.style.background="#f7c9d9";
+  sparkle.style.borderRadius="50%";
+  sparkle.style.pointerEvents="none";
+  document.body.appendChild(sparkle);
+  setTimeout(()=> sparkle.remove(), 500);
+});
 </script>
 
 </body>
